@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <title>Thay đổi thuộc tính</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  </head>
+  <body>
+    <h2>Nhập các giá trị và click vào nút Thay đổi</h2>
+    Tao: <input type="text" id="Tao" name="Tao" value="Tiêu đề mới" /><br />
+    Tao ra: <input type="text" id="TaoRa" name="TaoRa" value="Màu nền" /><br />
+    Mau Chu: <input type="text" id="MauChu" name="MauChu" value="red" /><br />
+    Mau Nen: <input type="text" id="MauNen" name="MauNen" value="blue" /><br />
+    <input type="button" value="Thay đổi" onClick="thayDoi();" />
+    <script>
+      function thayDoi() {
+        document.title = document.getElementById("Tao").value; // Thay đổi tiêu đề
+        document.bgColor = document.getElementById("MauNen").value; // Thay đổi màu nền
+        document.getElementById("TaoRa").style.color =
+          document.getElementById("MauChu").value; // Thay đổi màu chữ
+        window.defaultStatus = document.getElementById("TaoRa").value; // Thay đổi trạng thái mặc định
+      }
+    </script>
+  </body>
+</html>

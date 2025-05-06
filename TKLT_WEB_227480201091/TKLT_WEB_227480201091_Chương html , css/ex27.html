@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <title>Đọc giá trị trong Textbox</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  </head>
+  <body>
+    <h2>Hãy nhập họ và tên rồi click vào nút Hiển Thị</h2>
+    Ho: <input type="text" id="Ho" name="Ho" value="Ho" /><br />
+    Ten: <input type="text" id="Ten" name="Ten" value="Ten" /><br />
+    Hien Thi: <input type="text" id="HienThi" name="HienThi" value="" /><br />
+    <input
+      type="button"
+      name="HienThiBtn"
+      value="Hiển thị"
+      onClick="document.getElementById('HienThi').value = document.getElementById('Ho').value + ' ' + document.getElementById('Ten').value;"
+    />
+  </body>
+</html>

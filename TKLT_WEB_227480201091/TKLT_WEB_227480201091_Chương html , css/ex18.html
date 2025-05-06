@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function showten() {
+        alert(document.getElementById("msg01").value);
+      }
+
+      function showdonvi() {
+        alert(document.getElementById("msg02").value);
+      }
+    </script>
+
+    <input type="button" value="Họ tên" onclick="showten()" />
+    <input type="text" id="msg01" name="txthoten" value="Chào" size="20" />
+
+    <input type="button" value="Đơn vị" onclick="showdonvi()" />
+    <input type="text" id="msg02" name="txtdonvi" value="Đơn vị" size="20" />
+  </body>
+</html>

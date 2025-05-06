@@ -1,0 +1,27 @@
+<html>
+  <title>Bảng danh sách máy tính</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <body>
+    <script language="JavaScript">
+      // Khai báo mảng chứa thông tin máy tính
+      var computers = [
+        { name: "Dell", quantity: 10, price: 1500 },
+        { name: "HP", quantity: 15, price: 1200 },
+        { name: "Lenovo", quantity: 8, price: 1300 },
+      ];
+
+      // Tạo bảng
+      document.write(
+        "<table border='1'><tr><th>Tên máy</th><th>Số lượng</th><th>Giá bán</th></tr>"
+      );
+      for (var i = 0; i < computers.length; i++) {
+        document.write("<tr>");
+        document.write("<td>" + computers[i].name + "</td>");
+        document.write("<td>" + computers[i].quantity + "</td>");
+        document.write("<td>" + computers[i].price + "</td>");
+        document.write("</tr>");
+      }
+      document.write("</table>");
+    </script>
+  </body>
+</html>

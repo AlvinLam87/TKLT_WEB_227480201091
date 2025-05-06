@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <title>Tính tiền</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  </head>
+  <body style="font-family: arial; background-color: lavender">
+    <h1>Bạn hãy nhập vào số lượng và giá</h1>
+    Số lượng: <input name="SoLuong" id="SoLuong" value="0" /><br />
+    Đơn giá:
+    <input
+      name="DonGia"
+      id="DonGia"
+      onKeyUp="document.getElementById('ThanhTien').value = parseFloat(document.getElementById('SoLuong').value) * parseFloat(document.getElementById('DonGia').value);"
+    /><br />
+    Thành tiền: <input name="ThanhTien" id="ThanhTien" value="0 USD" /><br />
+  </body>
+</html>

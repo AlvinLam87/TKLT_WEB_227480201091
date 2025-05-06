@@ -1,0 +1,22 @@
+<html>
+  <title>Sắp xếp mảng</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <body>
+    <script language="JavaScript">
+      var SoLuong, x;
+      var DS = new Array(100); // Khai báo mảng DS, có thể lưu tối đa 100 phần tử
+      SoLuong = prompt("Bạn cần nhập bao nhiêu ngẫu nhiên: ", 5); // Số lượng phần tử
+      for (i = 0; i < SoLuong; i++) {
+        DS[i] = prompt("Nhập vào phần tử: ", "");
+      }
+      // Goi hàm sort để sắp xếp mảng DS
+      DS.sort();
+      // Hiện thị kết quả sau khi sắp (sort)
+      document.write("<h1>Danh sách đã sắp xếp là </h1>");
+      for (x in DS) {
+        // Hiện thị từng phần tử trong mảng
+        document.write(DS[x] + "<br>"); // Xuống dòng
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <title>Tính toán số học với radio</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  </head>
+  <body>
+    <h2>Nhập hai số, chọn phép tính và click Tính</h2>
+    So Hang 1: <input type="text" id="SoHang1" name="SoHang1" value="0" /><br />
+    So Hang 2: <input type="text" id="SoHang2" name="SoHang2" value="0" /><br />
+    Ket Qua: <input type="text" id="KetQua" name="KetQua" value="" /><br />
+    <input type="radio" name="phepTinh" value="Cong" checked /> Cộng<br />
+    <input type="radio" name="phepTinh" value="Tru" /> Trừ<br />
+    <input type="radio" name="phepTinh" value="Nhan" /> Nhân<br />
+    <input type="radio" name="phepTinh" value="Chia" /> Chia<br />
+    <input type="button" value="Tính" onClick="tinhToan();" />
+    <script>
+      function tinhToan() {
+        var so1 = parseFloat(document.getElementById("SoHang1").value);
+        var so2 = parseFloat(document.getElementById("SoHang2").value);
+        var phepTinh = document.querySelector(
+          'input[name="phepTinh"]:checked'
+        ).value;
+        var ketQua;
+        if (phepTinh === "Cong") ketQua = so1 + so2;
+        else if (phepTinh === "Tru") ketQua = so1 - so2;
+        else if (phepTinh === "Nhan") ketQua = so1 * so2;
+        else if (phepTinh === "Chia") ketQua = so1 / so2;
+        document.getElementById("KetQua").value = ketQua;
+      }
+    </script>
+  </body>
+</html>

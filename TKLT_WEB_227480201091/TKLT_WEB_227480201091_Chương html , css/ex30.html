@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <title>Tính toán số học</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  </head>
+  <body>
+    <h2>Nhập hai số và click vào các nút phép tính</h2>
+    So Hang 1: <input type="text" id="SoHang1" name="SoHang1" value="0" /><br />
+    So Hang 2: <input type="text" id="SoHang2" name="SoHang2" value="0" /><br />
+    Ket Qua: <input type="text" id="KetQua" name="KetQua" value="" /><br />
+    <input
+      type="button"
+      value="Cộng"
+      onClick="document.getElementById('KetQua').value = parseFloat(document.getElementById('SoHang1').value) + parseFloat(document.getElementById('SoHang2').value);"
+    />
+    <input
+      type="button"
+      value="Trừ"
+      onClick="document.getElementById('KetQua').value = parseFloat(document.getElementById('SoHang1').value) - parseFloat(document.getElementById('SoHang2').value);"
+    />
+    <input
+      type="button"
+      value="Nhân"
+      onClick="document.getElementById('KetQua').value = parseFloat(document.getElementById('SoHang1').value) * parseFloat(document.getElementById('SoHang2').value);"
+    />
+    <input
+      type="button"
+      value="Chia"
+      onClick="document.getElementById('KetQua').value = parseFloat(document.getElementById('SoHang1').value) / parseFloat(document.getElementById('SoHang2').value);"
+    />
+  </body>
+</html>

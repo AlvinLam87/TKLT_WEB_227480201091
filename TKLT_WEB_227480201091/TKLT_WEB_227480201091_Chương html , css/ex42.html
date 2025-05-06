@@ -1,0 +1,122 @@
+<html>
+  <head>
+    <title>Máy tính đơn giản</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      button {
+        width: 50px;
+        height: 50px;
+        margin: 5px;
+        font-size: 18px;
+      }
+      #Ketqua {
+        width: 220px;
+        height: 40px;
+        font-size: 18px;
+        margin: 10px 0;
+        text-align: right;
+        padding: 5px;
+      }
+      .calculator {
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="calculator">
+      <input type="text" id="Ketqua" value="0" readonly /><br />
+      <button onClick="themSo('7')">7</button>
+      <button onClick="themSo('8')">8</button>
+      <button onClick="themSo('9')">9</button>
+      <button onClick="themPhepToan('/')">/</button><br />
+      <button onClick="themSo('4')">4</button>
+      <button onClick="themSo('5')">5</button>
+      <button onClick="themSo('6')">6</button>
+      <button onClick="themPhepToan('*')">×</button><br />
+      <button onClick="themSo('1')">1</button>
+      <button onClick="themSo('2')">2</button>
+      <button onClick="themSo('3')">3</button>
+      <button onClick="themPhepToan('-')">-</button><br />
+      <button onClick="themSo('0')">0</button>
+      <button onClick="themPhepToan('+')">+</button>
+      <button onClick="tinhKetQua()">=</button>
+      <button onClick="xoa()">C</button>
+    </div>
+    <script>
+      let currentInput = "0";
+      let previousNumber = null;
+      let currentOperator = null;
+
+      function themSo(so) {
+        let display = document.getElementById("Ketqua");
+        if (currentInput === "0" || currentInput === "Lỗi") {
+          currentInput = so;
+        } else {
+          currentInput += so;
+        }
+        display.value = currentInput;
+      }
+
+      function themPhepToan(toanTu) {
+        let display = document.getElementById("Ketqua");
+        if (
+          currentInput !== "0" &&
+          currentInput !== "Lỗi" &&
+          !isNaN(currentInput.slice(-1))
+        ) {
+          if (previousNumber !== null && currentOperator) {
+            tinhKetQua();
+          }
+          previousNumber = parseFloat(currentInput);
+          currentOperator = toanTu;
+          currentInput += toanTu;
+          display.value = currentInput;
+        }
+      }
+
+      function tinhKetQua() {
+        let display = document.getElementById("Ketqua");
+        if (
+          previousNumber !== null &&
+          currentOperator &&
+          !isNaN(currentInput.slice(-1))
+        ) {
+          let currentNumber = parseFloat(
+            currentInput.split(currentOperator)[1] || "0"
+          );
+          switch (currentOperator) {
+            case "+":
+              currentInput = previousNumber + currentNumber;
+              break;
+            case "-":
+              currentInput = previousNumber - currentNumber;
+              break;
+            case "*":
+              currentInput = previousNumber * currentNumber;
+              break;
+            case "/":
+              if (currentNumber === 0) {
+                currentInput = "Lỗi (Chia cho 0)";
+              } else {
+                currentInput = previousNumber / currentNumber;
+              }
+              break;
+            default:
+              currentInput = currentNumber;
+          }
+          previousNumber = null;
+          currentOperator = null;
+          display.value = currentInput;
+        }
+      }
+
+      function xoa() {
+        let display = document.getElementById("Ketqua");
+        currentInput = "0";
+        previousNumber = null;
+        currentOperator = null;
+        display.value = currentInput;
+      }
+    </script>
+  </body>
+</html>

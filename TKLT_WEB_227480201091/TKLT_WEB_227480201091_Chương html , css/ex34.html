@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title>Thay đổi màu nền</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  </head>
+  <body>
+    <script language="JavaScript">
+      function DoiMau() {
+        var mau = document.getElementById("mauSelect").value;
+        document.bgColor = mau;
+      }
+    </script>
+    <p>Bạn hãy chọn màu nền:</p>
+    <select id="mauSelect" onChange="DoiMau()">
+      <option value="red">Red</option>
+      <option value="blue">Blue</option>
+      <option value="brown">Brown</option>
+      <option value="lavender">Lavender</option>
+    </select>
+  </body>
+</html>

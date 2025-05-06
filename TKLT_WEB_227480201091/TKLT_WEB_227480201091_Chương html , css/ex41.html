@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <title>Tính toán với radio</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  </head>
+  <body>
+    So01: <input type="text" id="So01" value="0" /><br />
+    So02: <input type="text" id="So02" value="0" /><br />
+    Kequa: <input type="text" id="Kequa" value="" /><br />
+    <input type="radio" name="phepTinh" value="Cong" checked /> Cộng<br />
+    <input type="radio" name="phepTinh" value="Tru" /> Trừ<br />
+    <input type="radio" name="phepTinh" value="Nhan" /> Nhân<br />
+    <input type="radio" name="phepTinh" value="Chia" /> Chia<br />
+    <button onClick="tinhToan()">Tính</button>
+    <script>
+      function tinhToan() {
+        var so1 = parseFloat(document.getElementById("So01").value);
+        var so2 = parseFloat(document.getElementById("So02").value);
+        var phepTinh = document.querySelector(
+          'input[name="phepTinh"]:checked'
+        ).value;
+        var ketQua;
+        if (phepTinh === "Cong") ketQua = so1 + so2;
+        else if (phepTinh === "Tru") ketQua = so1 - so2;
+        else if (phepTinh === "Nhan") ketQua = so1 * so2;
+        else if (phepTinh === "Chia") ketQua = so1 / so2;
+        document.getElementById("Kequa").value = ketQua;
+      }
+    </script>
+  </body>
+</html>
