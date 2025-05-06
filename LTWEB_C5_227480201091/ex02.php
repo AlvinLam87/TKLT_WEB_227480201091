@@ -1,22 +1,21 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html>
 <head>
     <meta charset="UTF-8">
-    <title>Danh sách năm</title>
+    <title>Thông tin sinh viên</title>
 </head>
 <body>
+    <?php
+        $HoTen = "Nguyễn Thanh Minh";
+        $NgaySinh = "12/09/2000";
+        $Lop = "12A1";
+        $Diem = 8.9;
 
-<form>
-    <label for="year">Chọn năm:</label>
-    <select id="year" name="year">
-        <?php
-        $currentYear = date("Y"); // Lấy năm hiện tại
-        for ($year = 1900; $year <= $currentYear; $year++) {
-            echo "<option value='$year'>$year</option>";
-        }
-        ?>
-    </select>
-</form>
-
+        echo "<h2>Thông tin sinh viên</h2>";
+        echo "Họ và tên: $HoTen <br>";
+        echo "Ngày sinh: $NgaySinh <br>";
+        echo "Lớp: $Lop <br>";
+        echo "Điểm: $Diem <br>";
+    ?>
 </body>
 </html>
